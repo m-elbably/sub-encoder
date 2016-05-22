@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Subtitle UTF-8 Encoder</title>
+    <link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+</head>
+<body style="background-color: white;">
+    <div files-list>
+        <input style="display:none;" id="openFile" type="file" nwdirectory/>
+
+        <lx-dialog class="dialog dialog--l" id="dlg">
+            <div class="dialog__header">
+                <div class="toolbar bgc-light-blue-500 pl++">
+                    <span class="toolbar__label tc-white fs-title">
+                        Subtitle UTF-8 Encoder
+                    </span>
+
+                </div>
+            </div>
+
+            <div class="dialog__content" style="margin: 16px;">
+                <p ng-if="encoded > 0">{{encoded}} File(s) already UTF-8 encoded.</p>
+                <p >{{converted}} file(s) have been converted.</p>
+            </div>
+
+            <div class="dialog__actions">
+                <button class="btn btn--m btn--black btn--flat" lx-ripple lx-dialog-close>Ok</button>
+            </div>
+        </lx-dialog>
+        <div id="progress" style="position: relative;"></div>
+        <div flex-item>
+            <div class="card">
+                <div class="p+">
+                    <span class="fs-subhead tc-black-2 display-block">Subtitles</span>
+                    <div style="min-height: 240px; max-height: 240px; border: 1px solid rgba(0,0,0,.10);" lx-scrollbar>
+                        <table class="data-table">
+                            <tbody>
+                                <tr class="data-table__selectable-row" ng-repeat="file in files" ng-class="{'data-table__selectable-row--is-selected': file.checked}">
+                                    <td></td>
+                                    <td>{{file.name}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+
+                <div class="card__actions">
+                    <button class="btn btn--m btn--orange btn--flat" ng-click="onBrowse()" lx-ripple>Browse</button>
+                    <button class="btn btn--m btn--blue btn--flat" ng-class="{'btn--is-disabled': files.length <= 0}" ng-click="onSelectAll()" lx-ripple>Select All</button>
+                    <button style="float: right;" class="btn btn--m btn--blue btn--raised" ng-class="{'btn--is-disabled': selected <= 0}" ng-click="onConvert()" lx-ripple>Convert</button>
+                </div>
+                <div class="card__actions">
+                    <div class="switch" style="float: left;">
+                        <input type="checkbox" id="switch1" class="switch__input" ng-model="backup">
+                        <label for="switch1" class="switch__label">Backup Original</label>
+                    </div>
+                    <span style="margin-left: 24px; color: gray; font-size: small;">Supported Subtitles: (srt, sub, txt)</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/velocity/velocity.js"></script>
+    <script src="bower_components/moment/min/moment-with-locales.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/lumx/dist/lumx.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{
+    "node-main": "app.js",
+    "version": "0.0.1",
+    "nodejs": true,
+    "window": {
+        "width": 680,
+        "mac_icon": "img/icon.png",
+        "toolbar": false,
+        "fullscreen": false,
+        "icon": "./img/icon.png",
+        "position": "mouse",
+        "frame": true,
+        "height": 425,
+        "resizable": false,
+        "show": true,
+        "show_in_taskbar": true,
+        "min_height": 425,
+        "kiosk": false,
+        "as_desktop": false,
+        "title": "Subtitle UTF-8 Encoder",
+        "always_on_top": false,
+        "min_width": 400,
+        "transparent": false,
+        "visible": true,
+        "kiosk_emulation": false
+    },
+    "app_name": "Sub Encoder",
+    "additional_trust_anchors": [
+        ""
+    ],
+    "dependencies": {
+        "charset-detector": "0.0.2",
+        "iconv-lite": "^0.4.13"
+    },
+    "webexe_settings": {
+        "mac-x64": false,
+        "force_download": false,
+        "export_dir": "/home",
+        "nw_compression_level": 2,
+        "linux-x64": true,
+        "nw_version": "0.14.5",
+        "sdk_build": false,
+        "windows-x64": true,
+        "mac-x32": false,
+        "windows-x32": false,
+        "download_dir": "/home/downloads",
+        "uncompressed_folder": false,
+        "linux-x32": false,
+        "custom_script": ""
+    },
+    "single-instance": true,
+    "description": "Convert subtitles to standered utf-8 for using with media servers",
+    "name": "subtitle-utf-encoder",
+    "webkit": {
+        "page-cache": false,
+        "java": false,
+        "plugin": false
+    },
+    "main": "index.html"
+}

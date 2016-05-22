@@ -1,0 +1,22 @@
+{
+  "name": "sub encoder",
+  "description": "Convert subtitles to standered utf-8 for using with media servers",
+  "main": "index.html",
+  "authors": [
+    "Mohamed El-Bably"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lumx": "0.3.96"
+  }
+}
